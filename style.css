@@ -291,7 +291,7 @@ footer > a {
 
 @media screen and (max-width: 600px) {
   .hero__main-headings {
-      font-size: 3rem; /* Adjust this value as needed for smaller screens */
+      font-size: 1rem; /* Adjust this value as needed for smaller screens */
   }
 }
 
@@ -309,3 +309,34 @@ html,body{
   overflow-x:hidden;
   
   }
+  @media (max-width: 600px) {
+    .nav {
+      padding: 10px;
+    }
+  
+    .list-items a {
+      padding: 10px;
+      font-size: 0.8rem; /* Adjust font size as needed */
+    }
+  
+    .nav__logo h1 {
+      font-size: 1rem; /* Adjust font size as needed */
+    }
+
+    .social-icons .fab {
+      font-size: 30px;
+      margin: 5px;
+      cursor: pointer;
+      color: #d33f3f;
+      transition: all 0.2s ease-out;
+    }
+    .fab:hover {
+      color: #d9e0c8;
+    }
+    
+    .fas {
+      font-size: 30px;
+      margin-right: 5px;
+    }
+  }
+  
