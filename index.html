@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Miere de la Abrudan</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
 
@@ -37,6 +37,17 @@
     
     </nav>
     
+    <div id="mesaj">
+      <button id="closeBtn">X</button>
+      <h2>Contact Us</h2>
+      <form action="mailto:andreiabrudan07@gmail.com" method="post" enctype="text/plain">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br><br>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+          <input type="submit" value="Send">
+      </form>
+    </div>
 
     <header class="hero">
       <section class="hero__headings-container"
@@ -238,21 +249,18 @@
           </div>
         </section>
     </section>
-
-    <form>
-      <input type="text" placeholder="John Doe">
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Password">
-      <a href="#" class="form-btn">Submit</a>
-    </form>
-
     <footer>
       <a href="#">About</a>
       <a href="#">Terms of Use</a>
       <a href="#">Privacy Policy</a>
       <a href="#">Careers</a>
-      <a href="#">Contact Us</a>
+      <a id="contact-linkkk" href="#mesaj">Contact Us</a>
     </footer>
-    
+
+  </div>
+
+  <script src="hiding.js"></script>
+  <script src="server.js"></script>
+
   </body>
 </html>
