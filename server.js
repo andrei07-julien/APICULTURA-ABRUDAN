@@ -1,9 +1,16 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors()); // Enable CORS for all routes
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.post('/send-email', (req, res) => {
     const { name, message } = req.body;
@@ -35,3 +42,4 @@ app.post('/send-email', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
+
