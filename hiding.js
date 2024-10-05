@@ -24,7 +24,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     // Get the values from the form fields with IDs 'name' and 'message'
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
-    const baseURL = 'http://localhost:3000';
+    const baseURL = process.env.BASE_URL || 'http://localhost:3000';
+
 
     // Send the form data to the server using the Fetch API
     fetch('${baseURL}/send-email', { // Changeable: The endpoint URL
