@@ -1,6 +1,6 @@
 // Coordonatele locațiilor
 var userLocation = [44.4328, 26.1043]; // Exemplu de coordonate pentru utilizator
-var sellerLocation = [44.4268, 26.1025]; // Exemplu de coordonate pentru vânzător
+var sellerLocation = 47.0680, 22.8631]; // Exemplu de coordonate pentru vânzător
 
 // Inițializează harta
 var map = L.map('map').setView(userLocation, 13);
