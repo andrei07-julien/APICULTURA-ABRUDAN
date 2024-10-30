@@ -1,29 +1,27 @@
-// Coordonatele locațiilor
-var userLocation = [44.4328, 26.1043]; // Exemplu de coordonate pentru utilizator
-var sellerLocation = 47.0680, 22.8631]; // Exemplu de coordonate pentru vânzător
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var userLocation = [position.coords.latitude, position.coords.longitude];
+        
+        var map = L.map('map').setView(userLocation, 13);
 
-// Inițializează harta
-var map = L.map('map').setView(userLocation, 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-// Adaugă tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+        L.marker(userLocation).addTo(map)
+            .bindPopup('Locația utilizatorului')
+            .openPopup();
 
-// Adaugă marcatori
-L.marker(userLocation).addTo(map)
-    .bindPopup('Locația utilizatorului')
-    .openPopup();
-
-L.marker(sellerLocation).addTo(map)
-    .bindPopup('Locația vânzătorului')
-    .openPopup();
-
-// Adaugă direcții de mers
-L.Routing.control({
-    waypoints: [
-        L.latLng(userLocation),
-        L.latLng(sellerLocation)
-    ],
-    routeWhileDragging: true
-}).addTo(map);
+        
+        var sellerLocation = [47.064884, 22.857979]; // replace with actual seller coordinates
+        L.Routing.control({
+             waypoints: [
+               L.latLng(userLocation),
+               L.latLng(sellerLocation)
+            ],
+            routeWhileDragging: true
+        }).addTo(map);
+    });
+} else {
+    alert("Geolocation is not supported by this browser.");
+}

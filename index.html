@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>Miere de la Abrudan</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -259,11 +260,15 @@
       <a id="contact-link" href="#mesaj">Contact Us</a>
       
     </footer>
-    <div id="map"></div>
+    <div id="map-container">
+       <div id="map">
+       </div> 
+    </div>
 
   </div>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="seller.js"></script>
   <script src="hiding.js"></script>
   <script src="server.js"></script>
