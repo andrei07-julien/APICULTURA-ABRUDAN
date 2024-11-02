@@ -427,4 +427,17 @@ html,body{
   width: 100%; 
   height: 400px; 
   border: 2px solid #000; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+#toggleView {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  z-index: 1000; /* Asigură-te că butonul este deasupra hărții */
+}
+
+

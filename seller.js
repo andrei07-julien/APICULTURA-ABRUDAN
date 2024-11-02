@@ -4,9 +4,14 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
     var map = L.map('map').setView(userLocation, 13);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    var satelliteLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+    });
+    
 
     L.marker(userLocation).addTo(map)
         .bindPopup('Locația utilizatorului')
@@ -24,4 +29,16 @@ navigator.geolocation.getCurrentPosition(function(position) {
         ],
         routeWhileDragging: true
     }).addTo(map);
+
+    document.getElementById('toggleView').addEventListener('click', function() { 
+        if (map.hasLayer(streetLayer)) {
+            map.removeLayer(streetLayer);
+            map.addLayer(satelliteLayer);
+        }
+        else {
+            map.removeLayer(satelliteLayer);
+            map.addLayer(streetLayer);
+        }
+    });
+
 });
