@@ -440,4 +440,17 @@ html,body{
   z-index: 1000; /* Asigură-te că butonul este deasupra hărții */
 }
 
+.hover-text {
+  display: inline-block;
+  padding: 10px;
+  background-color: rgb(79, 207, 53); /* Culoarea inițială */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Efect de tranziție */
+}
+
+.hover-text:hover {
+  background-color: rgb(34, 139, 34); /* Culoarea la hover */
+}
+
+
 

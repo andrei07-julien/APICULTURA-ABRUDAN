@@ -34,11 +34,15 @@ navigator.geolocation.getCurrentPosition(function(position) {
         if (map.hasLayer(streetLayer)) {
             map.removeLayer(streetLayer);
             map.addLayer(satelliteLayer);
+            document.getElementById('toggleView').textContent = 'Satellite View';
         }
         else {
             map.removeLayer(satelliteLayer);
             map.addLayer(streetLayer);
+            document.getElementById('toggleView').textContent = 'Street View';
         }
     });
-
+    
+   
+    
 });
