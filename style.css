@@ -451,6 +451,9 @@ html,body{
 .hover-text:hover {
   background-color: rgb(34, 139, 34); /* Culoarea la hover */
 }
+.leaflet-control-attribution {
+  display: none !important;
+}
 
 
 
